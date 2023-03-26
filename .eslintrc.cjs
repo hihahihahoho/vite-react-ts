@@ -1,27 +1,39 @@
 module.exports = {
-	"env": {
-		"browser": true,
-		"es2021": true
+	env: {
+		browser: true,
+		es2021: true,
 	},
-	"extends": [
-		"eslint:recommended",
-		"plugin:react/recommended",
-		"plugin:@typescript-eslint/recommended"
+	extends: [
+		'airbnb',
+		'airbnb/hooks',
+		'airbnb-typescript',
+		'plugin:react/recommended',
+		'plugin:@typescript-eslint/recommended',
+		'plugin:prettier/recommended',
 	],
-	"overrides": [
-	],
-	"parser": "@typescript-eslint/parser",
-	"parserOptions": {
-		"ecmaVersion": "latest",
-		"sourceType": "module",
-		"project": "./tsconfig.json",
+	overrides: [],
+	parser: '@typescript-eslint/parser',
+	parserOptions: {
+		ecmaVersion: 'latest',
+		sourceType: 'module',
+		project: './tsconfig.json',
 	},
-	"plugins": [
-		"react",
-		"@typescript-eslint",
-		"only-warn"
-	],
-	"rules": {
-		"react/jsx-no-target-blank": "warn"
-	}
-}
+	plugins: ['react', '@typescript-eslint', 'prettier'],
+	rules: {
+		indent: [2, 'tab', { SwitchCase: 1, VariableDeclarator: 1 }],
+		'@typescript-eslint/indent': ['error', 'tab'],
+		'no-tabs': 0,
+		'react/prop-types': 0,
+		'react/jsx-indent': [2, 'tab'],
+		'react/jsx-indent-props': [2, 'tab'],
+		'react/jsx-no-target-blank': 'warn',
+		'react/react-in-jsx-scope': 'off',
+		'react/jsx-one-expression-per-line': 'off',
+		'import/no-absolute-path': 'off',
+		'import/extensions': 2,
+		'no-param-reassign': 0,
+		'import/no-cycle': 0,
+		'@typescript-eslint/no-inferrable-types': 'error',
+		'@typescript-eslint/no-explicit-any': ['error', { ignoreRestArgs: true }],
+	},
+};
