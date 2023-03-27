@@ -6,6 +6,7 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build",
+		"deployFtp": "tsc && vite build --mode design",
 		"test": "vitest",
 		"preview": "vite preview",
 		"prepare": "husky install"
