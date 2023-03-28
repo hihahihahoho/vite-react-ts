@@ -6,14 +6,13 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build",
-		"deployFtp": "tsc && vite build --mode design && node deploy.config.js",
+		"deployFtp": "tsc && vite build --mode ftp && node deploy.config.js",
 		"test": "vitest",
 		"preview": "vite preview",
 		"prepare": "husky install"
 	},
 	"dependencies": {
 		"@tailwindcss/container-queries": "^0.1.0",
-		"@types/lodash": "^4.14.191",
 		"antd": "^5.3.2",
 		"eslint-config-airbnb-typescript": "^17.0.0",
 		"eslint-plugin-prettier": "^4.2.1",
@@ -29,6 +28,7 @@
 	},
 	"devDependencies": {
 		"@svgr/plugin-svgo": "^7.0.0",
+		"@types/lodash": "^4.14.191",
 		"@tailwindcss/line-clamp": "^0.4.2",
 		"@types/react": "^18.0.28",
 		"@types/react-dom": "^18.0.11",

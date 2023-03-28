@@ -3,7 +3,7 @@ import FtpDeploy from 'ftp-deploy';
 import { loadEnv } from 'vite';
 import ftpConfig from './ftp.config.js';
 
-process.env = { ...process.env, ...loadEnv('design', process.cwd()) };
+process.env = { ...process.env, ...loadEnv('ftp', process.cwd()) };
 
 const htaccessContent = `<IfModule mod_rewrite.c>
   RewriteEngine On
