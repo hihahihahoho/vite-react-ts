@@ -27,6 +27,7 @@ ftp.config.js
 .htaccess
 .env.design
 .env.ftp
+.env
 
 /build
 

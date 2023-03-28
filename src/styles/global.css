@@ -9,6 +9,7 @@ html {
 
 .svg-class {
 	max-width: 100%;
+	height: auto;
 	resize: both;
 	path,
 	line {

@@ -8,11 +8,7 @@ function addKeys<T>(arr: T[], childField: keyof T, parentKey?: string): T[] {
 			return {
 				...obj,
 				key,
-				[childField]: addKeys(
-					obj[childField] as unknown as T[],
-					childField,
-					key,
-				),
+				[childField]: addKeys(obj[childField] as T[], childField, key),
 			};
 		}
 		return { ...obj, key };
@@ -103,7 +99,7 @@ export function objectToArray(obj: { [key: string]: string }) {
 	});
 }
 
-export function isJson(str: unknown) {
+export function isJson(str: string) {
 	if (typeof str !== 'string') {
 		return false;
 	}
