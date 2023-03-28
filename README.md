@@ -37,7 +37,7 @@ The following scripts are available for use:
 
 - `dev`: Start the development server (`vite`).
 - `build`: Compile TypeScript and build the project (`tsc && vite build`).
-- `deployFtp`: Compile TypeScript, build the project in FTP mode, and deploy using FTP (`tsc && vite build --mode FTP && node deploy.config.js`).
+- `deployFtp`: Compile TypeScript, build the project in FTP mode, and deploy using FTP (`tsc && vite build --mode ftp && node deploy.config.js`).
 - `test`: Run tests (`vitest`).
 - `preview`: Start the Vite preview server (`vite preview`).
 - `prepare`: Install Husky for Git hooks (`husky install`).
