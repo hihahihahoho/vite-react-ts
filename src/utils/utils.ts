@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import * as R from 'remeda';
 import { RouteConfigInterface } from '../routers/routes';
 
 function addKeys<T>(arr: T[], childField: keyof T, parentKey?: string): T[] {
@@ -27,7 +27,7 @@ export function removeTrailingSlash(str: string) {
 export function modifyRouterProperties(
 	routes?: RouteConfigInterface[],
 	parentRouteProp: RouteConfigInterface = {},
-	includeProp: string[] = ['isProtected'],
+	includeProp?: (keyof RouteConfigInterface)[],
 	fullPath = true,
 ): RouteConfigInterface[] {
 	if (!routes) {
@@ -54,8 +54,8 @@ export function modifyRouterProperties(
 		}
 		const { ...routeProp } = route;
 		let filteredObject = {};
-		if (includeProp.length) {
-			filteredObject = _.pick(parentRouteProp, includeProp);
+		if (includeProp?.length) {
+			filteredObject = R.pick(parentRouteProp, includeProp);
 		}
 		route = { ...filteredObject, ...routeProp };
 

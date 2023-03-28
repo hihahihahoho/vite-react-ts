@@ -61,7 +61,7 @@ const routes: RouteConfigInterface[] = [
 ];
 
 const modifiedRouter: RouteConfigInterface[] = addKeys(
-	modifyRouterProperties(routes),
+	modifyRouterProperties(routes, {}, ['isProtected']),
 	'children',
 );
 console.log(modifiedRouter);
