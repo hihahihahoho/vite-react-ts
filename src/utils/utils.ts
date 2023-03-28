@@ -103,9 +103,13 @@ export function objectToArray(obj: { [key: string]: string }) {
 	});
 }
 
-export function isJson(str: string) {
+export function isJson(str: unknown) {
+	if (typeof str !== 'string') {
+		return false;
+	}
+
 	try {
-		JSON.parse(str);
+		JSON.parse(str as string);
 		return true;
 	} catch (e) {
 		return false;
