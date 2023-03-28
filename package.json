@@ -6,7 +6,7 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build",
-		"deployFtp": "tsc && vite build --mode design",
+		"deployFtp": "tsc && vite build --mode design && node deploy.config.js",
 		"test": "vitest",
 		"preview": "vite preview",
 		"prepare": "husky install"
@@ -45,6 +45,7 @@
 		"eslint-plugin-only-warn": "^1.1.0",
 		"eslint-plugin-react": "^7.32.2",
 		"eslint-plugin-react-hooks": "4.3.0",
+		"ftp-deploy": "^2.4.3",
 		"husky": "^8.0.0",
 		"postcss": "^8.4.21",
 		"prettier": "2.8.7",
