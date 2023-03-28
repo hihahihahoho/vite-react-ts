@@ -1,6 +1,6 @@
-# Vite + React + TypeScript Project
+# Vite + React + TypeScript Setup
 
-This project is a modern web application built with React, TypeScript, Vite, React Router DOM, Zustand, React query, and Tailwind CSS. This README provides an overview of the project setup, scripts, and deployment process.
+This project is a replacement for Creat React App with React, TypeScript, Vite, React Router DOM, Zustand, React query, and Tailwind CSS. This README provides an overview of the project setup, scripts, and deployment process.
 
 <div>
 <img align="top" src="https://iili.io/HNrTdxV.png"  width="128" height="128" style="margin:24px; ">
@@ -37,7 +37,7 @@ The following scripts are available for use:
 
 - `dev`: Start the development server (`vite`).
 - `build`: Compile TypeScript and build the project (`tsc && vite build`).
-- `deployFtp`: Compile TypeScript, build the project in design mode, and deploy using FTP (`tsc && vite build --mode design && node deploy.config.js`).
+- `deployFtp`: Compile TypeScript, build the project in FTP mode, and deploy using FTP (`tsc && vite build --mode FTP && node deploy.config.js`).
 - `test`: Run tests (`vitest`).
 - `preview`: Start the Vite preview server (`vite preview`).
 - `prepare`: Install Husky for Git hooks (`husky install`).
