@@ -1,11 +1,11 @@
-# My React TypeScript Project
+# Vite + React + TypeScript Project
 
 This project is a modern web application built with React, TypeScript, Vite, React Router DOM, Zustand, React query, and Tailwind CSS. This README provides an overview of the project setup, scripts, and deployment process.
 
 <div>
 <img align="top" src="https://iili.io/HNrTdxV.png"  width="128" height="128" style="margin:24px; ">
 <img align="top" src="https://iili.io/HNrTHDQ.png"  width="128" height="128" style="margin:24px; ">
-<img align="top" src="https://iili.io/HNrT9Ox.png"  width="128" height="128" style="margin:24px; ">
+<img align="top" src="https://iili.io/HNruZ8u.png"  width="128" height="128" style="margin:24px; ">
 <img align="top" src="https://iili.io/HNrT3iP.png"  width="128" height="128" style="margin:24px; ">
 <img align="top" src="https://iili.io/HNrT2WB.png"  width="128" height="128" style="margin:24px; ">
 <img align="top" src="https://iili.io/HNrIyRj.png"  width="128" height="128" style="margin:24px; ">
