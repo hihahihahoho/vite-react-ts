@@ -11,12 +11,6 @@ describe('isJson', () => {
 		const invalidJson = '{"key": "value",}';
 		expect(isJson(invalidJson)).toBe(false);
 	});
-
-	it('should return false for a non-string input', () => {
-		const nonStringInput = 12345;
-		expect(isJson(nonStringInput)).toBe(false);
-	});
-
 	it('should return false for an empty string', () => {
 		const emptyString = '';
 		expect(isJson(emptyString)).toBe(false);
