@@ -4,7 +4,6 @@ module.exports = {
 		"./src/**/*.{js,jsx,ts,tsx}",
 	],
 	plugins: [
-		require('@tailwindcss/line-clamp'),
 		require('@tailwindcss/container-queries'),
 		require('tailwindcss-themer')({
 			defaultTheme: {
