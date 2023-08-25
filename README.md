@@ -26,6 +26,12 @@ Before you begin, ensure you have the following installed:
 - [Yarn](https://yarnpkg.com/) or [npm](https://www.npmjs.com/)
 - NODE 18.14.0
 
+## VScode extension:
+
+- [Editor config](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+
 ## Installation
 
 1. Clone the repository.

@@ -3,14 +3,7 @@ module.exports = {
 		browser: true,
 		es2021: true,
 	},
-	extends: [
-		'airbnb',
-		'airbnb/hooks',
-		'airbnb-typescript',
-		'plugin:react/recommended',
-		'plugin:@typescript-eslint/recommended',
-		'plugin:prettier/recommended',
-	],
+	extends: ['react-app', 'plugin:prettier/recommended'],
 	overrides: [],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
@@ -18,8 +11,9 @@ module.exports = {
 		sourceType: 'module',
 		project: './tsconfig.json',
 	},
-	plugins: ['react', '@typescript-eslint', 'prettier'],
+	plugins: ['react', 'prettier'],
 	rules: {
+		'prettier/prettier': 'warn',
 		indent: [2, 'tab', { SwitchCase: 1, VariableDeclarator: 1 }],
 		'@typescript-eslint/indent': ['error', 'tab'],
 		'no-tabs': 0,
@@ -33,7 +27,7 @@ module.exports = {
 		'import/extensions': 2,
 		'no-param-reassign': 0,
 		'import/no-cycle': 0,
-		'@typescript-eslint/no-inferrable-types': 'error',
-		'@typescript-eslint/no-explicit-any': ['error', { ignoreRestArgs: true }],
+		'@typescript-eslint/no-inferrable-types': 'warn',
+		'@typescript-eslint/no-explicit-any': ['warn', { ignoreRestArgs: true }],
 	},
 };
