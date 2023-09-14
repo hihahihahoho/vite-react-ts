@@ -1,7 +1,7 @@
 import { ElementType, Fragment, ReactElement, ReactNode } from 'react';
 import { Outlet, Route, Routes } from 'react-router-dom';
 import DefaultLayout from '../layouts/DefaultLayout/DefaultLayout';
-import { modifiedRouter, RouteConfigInterface } from './routes';
+import { RouteConfigInterface, modifiedRouter } from './routes';
 
 interface ProtectedRouteProps {
 	children: ReactElement;

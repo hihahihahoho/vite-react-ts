@@ -11,6 +11,7 @@ html {
 	max-width: 100%;
 	height: auto;
 	resize: both;
+	background-color: oklch(61% 0.2 29);
 	path,
 	line {
 		fill: currentColor;

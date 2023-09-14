@@ -45,6 +45,5 @@
 	"tailwindCSS.includeLanguages": {
 		"typescript": "javascript",
 		"typescriptreact": "javascript"
-	},
-	"imageExplorer.allPath": ["/D:/work/vnpay/www-tools/hdsd/src/assets"]
+	}
 }

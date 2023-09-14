@@ -65,5 +65,5 @@ const modifiedRouter: RouteConfigInterface[] = addKeys(
 	'children',
 );
 console.log(modifiedRouter);
+export { modifiedRouter, page404, routes };
 export type { RouteConfigInterface };
-export { routes, page404, modifiedRouter };

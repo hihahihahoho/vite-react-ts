@@ -5,6 +5,7 @@ import react from '@vitejs/plugin-react';
 import { defineConfig, loadEnv } from 'vite';
 import eslint from 'vite-plugin-eslint';
 import vitePluginFaviconsInject from 'vite-plugin-favicons-inject';
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import svgr from 'vite-plugin-svgr';
 // https://vitejs.dev/config/
 export default ({ mode }) => {
@@ -35,6 +36,18 @@ export default ({ mode }) => {
 			react(),
 			eslint(),
 			vitePluginFaviconsInject(`./public/favicon.svg`, {}),
+			ViteImageOptimizer({
+				test: /\.(jpe?g|png|gif|tiff|webp|avif)$/i,
+				png: {
+					quality: 80,
+				},
+				jpeg: {
+					quality: 90,
+				},
+				jpg: {
+					quality: 90,
+				},
+			}),
 		],
 	});
 };
