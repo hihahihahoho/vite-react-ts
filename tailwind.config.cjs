@@ -17,19 +17,26 @@ module.exports = {
 			},
 			themes: [
 				{
-					name: 'dark',
+					name: 'theme-dark',
 					extend: {
 						colors: {
-							primary: 'blue',
+							primary: 'black',
 							boxColor: '#1e293b',
 							formBorder: '#6b7280'
 						}
 					}
 				}, {
-					name: 'vietcombank',
+					name: 'theme-vietcombank',
 					extend: {
 						colors: {
-							primary: 'green',
+							primary: 'yellow',
+						}
+					}
+				}, {
+					name: 'theme-bidv',
+					extend: {
+						colors: {
+							primary: 'cyan',
 						}
 					}
 				}
