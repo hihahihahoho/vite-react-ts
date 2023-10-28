@@ -38,7 +38,7 @@ export const Default: Story = {
 };
 
 export const Debuger: Story = {
-	play: async ({ canvasElement }) => {
+	play: async ({ canvasElement }: { canvasElement: any }) => {
 		const canvas = within(canvasElement);
 
 		const submitButton = canvas.getByRole('combobox');
