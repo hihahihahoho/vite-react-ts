@@ -117,13 +117,22 @@ export interface SelectProps {
 		value: string;
 	}[];
 	defaultValue?: string;
+	placeholder?: string | React.ReactNode;
 }
 
-const Select: React.FC<SelectProps> = ({ data, defaultValue }) => {
+const Select: React.FC<SelectProps> = ({
+	data,
+	defaultValue,
+	placeholder = 'Chọn',
+}) => {
 	return (
 		<SelectPrimartive defaultValue={defaultValue}>
 			<SelectTrigger>
-				<SelectValue placeholder="Select a fruit" />
+				<SelectValue
+					placeholder={
+						<div className="text-primary-foreground">{placeholder}</div>
+					}
+				/>
 			</SelectTrigger>
 			<SelectContent>
 				<SelectGroup>

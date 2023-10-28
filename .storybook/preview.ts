@@ -22,8 +22,8 @@ const preview: Preview = {
 		//@ts-ignore
 		withThemeByClassName({
 			themes: {
-				light: 'theme-light',
-				dark: 'theme-dark',
+				light: 'light-mode',
+				dark: 'dark-mode',
 				vietcombank: 'theme-vietcombank',
 				bidv: 'theme-bidv',
 			},

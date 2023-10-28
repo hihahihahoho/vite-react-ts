@@ -4,7 +4,7 @@ module.exports = {
 		"./src/**/*.{js,jsx,ts,tsx}",
 	],
 	safelist: [
-		'theme-dark'
+		'dark-mode'
 	],
 	plugins: [
 		require("tailwindcss-animate"),
@@ -75,12 +75,9 @@ module.exports = {
 			},
 			themes: [
 				{
-					name: 'theme-dark',
+					name: 'dark-mode',
 					extend: {
 						colors: {
-							primary: 'black',
-							boxColor: '#1e293b',
-							formBorder: '#6b7280'
 						}
 					}
 				}, {

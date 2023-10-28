@@ -19,10 +19,10 @@ export default ({ mode }: { mode: any }) => {
 		base: baseURL,
 		resolve: {
 			alias: {
-				'@': path.resolve(__dirname, 'src'), // Alias '@' to the 'src' directory
-				'@components': path.resolve(__dirname, 'src/libs/components'), // Alias 'components' to 'src/components'
-				'@assets': path.resolve(__dirname, 'src/assets'), // Alias 'components' to 'src/components'
-				// ... add other aliases as needed
+				'@': path.resolve(__dirname, 'src'),
+				'@pages': path.resolve(__dirname, 'src/pages'),
+				'@libs': path.resolve(__dirname, 'src/libs'),
+				'@assets': path.resolve(__dirname, 'src/assets'),
 			},
 		},
 		build: {

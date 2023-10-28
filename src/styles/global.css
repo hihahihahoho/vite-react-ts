@@ -35,7 +35,7 @@
 		--radius: 0.5rem;
 	}
 
-	.theme-dark {
+	.dark-mode {
 		--background: 222.2 84% 4.9%;
 		--foreground: 210 40% 98%;
 
@@ -67,16 +67,17 @@
 }
 
 @layer base {
-	* {
-		@apply border-border;
-	}
-	body {
-		@apply bg-background text-foreground;
-	}
 }
 
-.theme-dark .docs-story,
-.theme-dark .sb-show-main {
+* {
+	@apply border-border;
+}
+body {
+	@apply bg-background text-foreground;
+}
+
+.dark-mode .docs-story,
+.dark-mode .sb-show-main {
 	@apply bg-background text-foreground;
 }
 
@@ -84,7 +85,6 @@ html {
 	font-family: 'Inter', sans-serif;
 	font-size: 14px;
 }
-
 .svg-class {
 	max-width: 100%;
 	height: auto;
