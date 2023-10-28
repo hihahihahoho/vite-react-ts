@@ -45,5 +45,9 @@
 	"tailwindCSS.includeLanguages": {
 		"typescript": "javascript",
 		"typescriptreact": "javascript"
+	},
+	"path-intellisense.mappings": {
+		"@assets": "${workspaceFolder}/src/assets",
+		"assets": "${workspaceFolder}/src/assets"
 	}
 }

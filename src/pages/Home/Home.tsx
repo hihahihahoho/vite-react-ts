@@ -1,7 +1,7 @@
 // import { gapi } from 'gapi-script';
+import { Button, StaticImage } from '@/libs/components';
+import { ReactComponent as Logo } from '@assets/logo.svg';
 import { Link } from 'react-router-dom';
-import banner from '../../assets/bill-header-pattern.jpg';
-import { ReactComponent as Logo } from '../../assets/logo.svg';
 
 function Home() {
 	return (
@@ -9,10 +9,11 @@ function Home() {
 			<div className="text-primary">
 				<h1>Home</h1>
 				<Logo />
-				<Link to="/login">
+				<Link className="" to="">
 					<button>Go Login</button>
+					<Button />
 				</Link>
-				<img src={banner} alt="" />
+				<StaticImage src="assets/patern/bill-header-pattern.jpg" />
 			</div>
 		</div>
 	);

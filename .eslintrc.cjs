@@ -3,7 +3,11 @@ module.exports = {
 		browser: true,
 		es2021: true,
 	},
-	extends: ['react-app', 'plugin:prettier/recommended', 'plugin:storybook/recommended'],
+	extends: [
+		'react-app',
+		'plugin:prettier/recommended',
+		'plugin:storybook/recommended',
+	],
 	overrides: [],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
@@ -15,7 +19,7 @@ module.exports = {
 	rules: {
 		'prettier/prettier': 'warn',
 		indent: [2, 'tab', { SwitchCase: 1, VariableDeclarator: 1 }],
-		'@typescript-eslint/indent': ['error', 'tab'],
+		// '@typescript-eslint/indent': ['warn', 'tab'],
 		'no-tabs': 0,
 		'react/prop-types': 0,
 		'react/jsx-indent': [2, 'tab'],
