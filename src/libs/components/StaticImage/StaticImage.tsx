@@ -1,4 +1,4 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import {
 	LazyLoadImage,
 	LazyLoadImageProps,
@@ -20,7 +20,7 @@ export function StaticImage({
 }: StaticImageProps) {
 	return (
 		<LazyLoadImage
-			wrapperClassName={cn(style.StaticImageWrapper, wrapperClassName)}
+			wrapperClassName={clsx(style.StaticImageWrapper, wrapperClassName)}
 			src={getImgUrl(`../../../${src}`)}
 			alt={alt}
 			effect="blur"

@@ -1,8 +1,8 @@
+import { addKeys, modifyRouterProperties } from '@/libs/utils';
+import Page404 from '@/pages/404/404';
+import Home from '@/pages/Home/Home';
+import Login from '@/pages/Login/Login';
 import { ComponentType, FC, Fragment, ReactElement, ReactNode } from 'react';
-import Page404 from '../pages/404/404';
-import Home from '../pages/Home/Home';
-import Login from '../pages/Login/Login';
-import { addKeys, modifyRouterProperties } from '../utils/utils';
 
 interface RouteConfigInterface {
 	key?: string;

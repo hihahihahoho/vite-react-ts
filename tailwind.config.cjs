@@ -3,6 +3,9 @@ module.exports = {
 	content: [
 		"./src/**/*.{js,jsx,ts,tsx}",
 	],
+	safelist: [
+		'theme-dark'
+	],
 	plugins: [
 		require("tailwindcss-animate"),
 		require('@tailwindcss/container-queries'),
@@ -17,7 +20,6 @@ module.exports = {
 				},
 				extend: {
 					colors: {
-						primary: 'red',
 						formBorder: '#d1d5db',
 						boxColor: 'white',
 						border: "hsl(var(--border))",

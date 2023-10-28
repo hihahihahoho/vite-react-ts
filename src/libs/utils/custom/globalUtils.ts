@@ -1,5 +1,5 @@
+import { RouteConfigInterface } from '@/routers/routes';
 import * as R from 'remeda';
-import { RouteConfigInterface } from '../routers/routes';
 
 function addKeys<T>(arr: T[], childField: keyof T, parentKey?: string): T[] {
 	return arr.map((obj, i) => {
@@ -68,7 +68,7 @@ export function modifyRouterProperties(
 			);
 		}
 		if (route.index === false && route.children) {
-			route.children = route.children.map((child) => {
+			route.children = route.children.map((child: any) => {
 				child.path = `${route.path}/${child.path}`;
 				return child;
 			});

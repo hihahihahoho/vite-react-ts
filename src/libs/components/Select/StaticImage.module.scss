@@ -1,7 +1,0 @@
-.SelectWrapper {
-	&:global {
-		&.blur.lazy-load-image-loaded {
-			@apply blur-0;
-		}
-	}
-}

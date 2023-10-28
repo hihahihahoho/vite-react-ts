@@ -1,12 +1,11 @@
 'use client';
 
+import { cn } from '@/libs/utils/external/shadcn-ui';
 import * as SelectPrimitive from '@radix-ui/react-select';
 import { Check, ChevronDown } from 'lucide-react';
 import * as React from 'react';
 
-import cn from 'classnames';
-
-const Select = SelectPrimitive.Root;
+const SelectPrimartive = SelectPrimitive.Root;
 
 const SelectGroup = SelectPrimitive.Group;
 
@@ -19,7 +18,7 @@ const SelectTrigger = React.forwardRef<
 	<SelectPrimitive.Trigger
 		ref={ref}
 		className={cn(
-			'flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
+			'flex min-h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2  ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
 			className,
 		)}
 		{...props}
@@ -81,18 +80,19 @@ const SelectItem = React.forwardRef<
 	<SelectPrimitive.Item
 		ref={ref}
 		className={cn(
-			'relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+			'relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 px-2 outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 select-item',
 			className,
 		)}
 		{...props}
 	>
-		<span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+		<div className="flex-1">
+			<SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
+		</div>
+		<div className="h-4 w-4">
 			<SelectPrimitive.ItemIndicator>
 				<Check className="h-4 w-4" />
 			</SelectPrimitive.ItemIndicator>
-		</span>
-
-		<SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
+		</div>
 	</SelectPrimitive.Item>
 ));
 SelectItem.displayName = SelectPrimitive.Item.displayName;
@@ -109,13 +109,43 @@ const SelectSeparator = React.forwardRef<
 ));
 SelectSeparator.displayName = SelectPrimitive.Separator.displayName;
 
-export {
-	Select,
-	SelectContent,
-	SelectGroup,
-	SelectItem,
-	SelectLabel,
-	SelectSeparator,
-	SelectTrigger,
-	SelectValue,
+export interface SelectProps {
+	data: {
+		title: string;
+		sub?: string;
+		image?: string;
+		value: string;
+	}[];
+	defaultValue?: string;
+}
+
+const Select: React.FC<SelectProps> = ({ data, defaultValue }) => {
+	return (
+		<SelectPrimartive defaultValue={defaultValue}>
+			<SelectTrigger>
+				<SelectValue placeholder="Select a fruit" />
+			</SelectTrigger>
+			<SelectContent>
+				<SelectGroup>
+					<SelectLabel>Fruits</SelectLabel>
+					{!data || data.length === 0 ? (
+						<div>No data</div>
+					) : (
+						data.map((item) => (
+							<SelectItem value={item.value}>
+								<div className="space-y-1">
+									{item.title}
+									{item.sub && (
+										<div className="text-muted-foreground">{item.sub}</div>
+									)}
+								</div>
+							</SelectItem>
+						))
+					)}
+				</SelectGroup>
+			</SelectContent>
+		</SelectPrimartive>
+	);
 };
+
+export { Select };

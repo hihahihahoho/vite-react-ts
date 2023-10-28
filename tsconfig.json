@@ -19,7 +19,9 @@
 		"baseUrl": "./",
 		"paths": {
 			"@/*": ["src/*"],
-			"@assets/*": ["src/assets/*"]
+			"@assets/*": ["src/assets/*"],
+			"@libs/*": ["src/libs/*"],
+			"@pages/*": ["src/pages/*"]
 		}
 	},
 	"include": ["src", "src/**/*.{tsx,js,ts,jsx}", ".eslintrc.cjs"],
