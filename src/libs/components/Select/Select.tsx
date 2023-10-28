@@ -120,7 +120,7 @@ export interface SelectProps {
 	placeholder?: string | React.ReactNode;
 }
 
-const Select: React.FC<SelectProps> = ({
+const CSelect: React.FC<SelectProps> = ({
 	data,
 	defaultValue,
 	placeholder = 'Chọn',
@@ -157,4 +157,4 @@ const Select: React.FC<SelectProps> = ({
 	);
 };
 
-export { Select };
+export { CSelect };
