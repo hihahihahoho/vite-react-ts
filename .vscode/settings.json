@@ -49,5 +49,8 @@
 	"path-intellisense.mappings": {
 		"@assets": "${workspaceFolder}/src/assets",
 		"assets": "${workspaceFolder}/src/assets"
+	},
+	"[scss]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	}
 }
