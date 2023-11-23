@@ -1,3 +1,3 @@
 export { Button } from './Button';
-export { Select } from './Select';
+export { CSelect } from './Select';
 export { StaticImage } from './StaticImage';

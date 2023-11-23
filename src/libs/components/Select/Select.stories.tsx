@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { userEvent, within } from '@storybook/testing-library';
-import { Select } from '..';
+import { CSelect } from './Select';
 
 const meta = {
-	component: Select,
+	component: CSelect,
 	parameters: {
 		layout: 'centered',
 	},
 	tags: ['autodocs'],
-} satisfies Meta<typeof Select>;
+} satisfies Meta<typeof CSelect>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

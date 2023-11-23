@@ -2,6 +2,7 @@ import { addKeys, modifyRouterProperties } from '@/libs/utils';
 import Page404 from '@/pages/404/404';
 import Home from '@/pages/Home/Home';
 import Login from '@/pages/Login/Login';
+import Test from '@/pages/Test/Test';
 import { ComponentType, FC, Fragment, ReactElement, ReactNode } from 'react';
 
 interface RouteConfigInterface {
@@ -35,6 +36,11 @@ const routes: RouteConfigInterface[] = [
 		path: '/',
 		isProtected: true,
 		index: true,
+	},
+	{
+		title: 'Test',
+		component: Test,
+		path: '/test',
 	},
 	{
 		title: 'Login',
