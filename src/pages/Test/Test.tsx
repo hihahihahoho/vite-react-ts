@@ -11,6 +11,7 @@ interface ICheckBox {
 	id: string;
 	value: boolean;
 	parent?: string;
+	children?: ICheckBox[];
 }
 
 const checkBox: ICheckBox[] = [
@@ -62,6 +63,33 @@ interface HierarchicalData<T> {
 	children?: T[];
 }
 
+const updateCheckboxState = (
+	items: ICheckBox[],
+	itemName: string,
+	checked: boolean,
+): ICheckBox[] => {
+	return items.map((item) => {
+		// If this is the item that was changed, or if it has children that might need updates
+		if (item.id === itemName || (item.children && item.children.length > 0)) {
+			// Determine the new value for 'value' property
+			const newValue = item.id === itemName ? checked : item.value;
+			// Update children if any
+			const children = item.children
+				? updateCheckboxState(item.children, itemName, checked)
+				: [];
+
+			return {
+				...item,
+				value: newValue,
+				children: children,
+			};
+		} else {
+			// If it's not the changed item and it doesn't have children, return it unchanged
+			return item;
+		}
+	});
+};
+
 const arrayToDeepArray = <T extends HierarchicalData<T>>(
 	arr: T[],
 	nameKey: keyof T,
@@ -93,34 +121,59 @@ const arrayToDeepArray = <T extends HierarchicalData<T>>(
 };
 
 export const Test: React.FC<Props> = () => {
-	const [checkboxState, setCheckboxState] = useState(checkBox);
+	const [checkboxState, setCheckboxState] = useState(
+		arrayToDeepArray(checkBox, 'id'),
+	);
 	const [checkboxAllState, setCheckboxAllState] = useState(
 		checkBox.every((item) => item.value),
 	);
-	const displayCheckbox = arrayToDeepArray(checkBox, 'id');
-	console.log(displayCheckbox);
 	const handleCheckboxChange = (
 		itemName: ICheckBox['id'],
 		e: ChangeEvent<HTMLInputElement>,
 	) => {
 		const checked = e.target.checked;
-		const newCheckBoxState = checkboxState.map((item) => {
-			if (item.id === itemName) {
-				return { ...item, value: checked };
-			}
-			return item;
-		});
-		setCheckboxState(newCheckBoxState);
-		setCheckboxAllState(newCheckBoxState.every((item) => item.value));
+		const newCheckboxState = updateCheckboxState(
+			checkboxState,
+			itemName,
+			checked,
+		);
+		console.log(newCheckboxState);
+		setCheckboxState(newCheckboxState);
+		setCheckboxAllState(newCheckboxState.every((item) => item.value));
 	};
 
 	const handleCheckBoxAllChange = (e: ChangeEvent<HTMLInputElement>) => {
 		const checked = e.target.checked;
-		const newCheckBoxState = checkboxState.map((item) => {
-			return { ...item, value: checked };
-		});
-		setCheckboxState(newCheckBoxState);
+		const newCheckboxState = updateAll(checkboxState, checked);
+		setCheckboxState(newCheckboxState);
 		setCheckboxAllState(checked);
+	};
+
+	const updateAll = (items: ICheckBox[], checked: boolean): ICheckBox[] => {
+		return items.map((item) => ({
+			...item,
+			value: checked,
+			children: item.children ? updateAll(item.children, checked) : [],
+		}));
+	};
+
+	const renderCheckboxTree = (items: ICheckBox[]) => {
+		return items.map((item) => (
+			<li key={item.id}>
+				<label>
+					<input
+						onChange={(e) => handleCheckboxChange(item.id, e)}
+						type="checkbox"
+						name={item.id}
+						checked={item.value}
+					/>
+					{item.label}
+				</label>
+				{item.children && item.children.length > 0 && (
+					<ul className="pl-4">{renderCheckboxTree(item.children)}</ul>
+				)}
+			</li>
+		));
 	};
 
 	return (
@@ -134,23 +187,7 @@ export const Test: React.FC<Props> = () => {
 				/>
 				Select all
 			</label>
-			<ul>
-				{checkboxState.map((item) => {
-					return (
-						<li key={item.id}>
-							<label>
-								<input
-									onChange={(e) => handleCheckboxChange(item.id, e)}
-									type="checkbox"
-									name={item.id}
-									checked={item.value}
-								/>
-								{item.label}
-							</label>
-						</li>
-					);
-				})}
-			</ul>
+			<ul>{renderCheckboxTree(checkboxState)}</ul>
 		</div>
 	);
 };
