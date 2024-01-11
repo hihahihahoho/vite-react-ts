@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require('tailwindcss/plugin')
+const { default: flattenColorPalette } = require("tailwindcss/lib/util/flattenColorPalette");
 module.exports = {
 	content: [
 		"./src/**/*.{js,jsx,ts,tsx}",
@@ -9,6 +11,28 @@ module.exports = {
 	plugins: [
 		require("tailwindcss-animate"),
 		require('@tailwindcss/container-queries'),
+		plugin(function ({ addUtilities, addBase, theme }) {
+			const colors = theme('colors');
+			const newUtilities = {};
+
+			Object.keys(colors).forEach(key => {
+				const name = `--tw-bgs-${key}`;
+				const value = colors[key];
+
+				newUtilities[`.bgs-${key}`] = {
+					'background': `var(${name})`,
+				};
+
+				// Assigning the value to the custom property
+				addBase({
+					':root': {
+						[name]: value,
+					},
+				});
+			});
+
+			addUtilities(newUtilities, ['responsive']);
+		}),
 		require('tailwindcss-themer')({
 			defaultTheme: {
 				container: {
@@ -27,6 +51,7 @@ module.exports = {
 						ring: "hsl(var(--ring))",
 						background: "hsl(var(--background))",
 						foreground: "hsl(var(--foreground))",
+						primary1: 'blue',
 						primary: {
 							DEFAULT: "hsl(var(--primary))",
 							foreground: "hsl(var(--primary-foreground))",
