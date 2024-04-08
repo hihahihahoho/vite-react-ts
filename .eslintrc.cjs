@@ -18,8 +18,8 @@ module.exports = {
 	plugins: ['react', 'prettier'],
 	rules: {
 		'prettier/prettier': 'warn',
-		indent: [2, 'tab', { SwitchCase: 1, VariableDeclarator: 1 }],
-		// '@typescript-eslint/indent': ['warn', 'tab'],
+		'@typescript-eslint/indent': ['warn', 'tab'],
+		indent: 'off',
 		'no-tabs': 0,
 		'react/prop-types': 0,
 		'react/jsx-indent': [2, 'tab'],

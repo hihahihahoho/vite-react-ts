@@ -16,6 +16,7 @@
 		"noEmit": true,
 		"jsx": "react-jsx",
 		"types": ["vite-plugin-svgr/client", "vite/client"],
+		"typeRoots": ["./node_modules/@types/", "./types", "./node_modules"],
 		"baseUrl": "./",
 		"paths": {
 			"@/*": ["src/*"],
@@ -24,6 +25,11 @@
 			"@pages/*": ["src/pages/*"]
 		}
 	},
-	"include": ["src", "src/**/*.{tsx,js,ts,jsx}", ".eslintrc.cjs"],
+	"include": [
+		"src",
+		"src/**/*.{tsx,js,ts,jsx}",
+		".eslintrc.cjs",
+		"storybook/**/*.{tsx,js,ts,jsx}"
+	],
 	"references": [{ "path": "./tsconfig.node.json" }]
 }

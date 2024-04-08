@@ -7,11 +7,6 @@ const config: StorybookConfig = {
 		'@storybook/addon-essentials',
 		'@storybook/addon-onboarding',
 		'@storybook/addon-interactions',
-		'storybook-addon-variants',
-		{
-			name: '@storybook/addon-styling',
-			options: {},
-		},
 	],
 	framework: {
 		name: '@storybook/react-vite',

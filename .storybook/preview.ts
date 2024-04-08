@@ -1,7 +1,5 @@
 import type { Preview } from '@storybook/react';
 
-import { withThemeByClassName } from '@storybook/addon-styling';
-
 /* TODO: update import to your tailwind styles file. If you're using Angular, inject this through your angular.json config instead */
 import '../src/styles/global.css';
 
@@ -20,15 +18,15 @@ const preview: Preview = {
 		// Adds theme switching support.
 		// NOTE: requires setting "darkMode" to "class" in your tailwind config
 		//@ts-ignore
-		withThemeByClassName({
-			themes: {
-				light: 'light-mode',
-				dark: 'dark-mode',
-				vietcombank: 'theme-vietcombank',
-				bidv: 'theme-bidv',
-			},
-			defaultTheme: 'light',
-		}),
+		// withThemeByClassName({
+		// 	themes: {
+		// 		light: 'light-mode',
+		// 		dark: 'dark-mode',
+		// 		vietcombank: 'theme-vietcombank',
+		// 		bidv: 'theme-bidv',
+		// 	},
+		// 	defaultTheme: 'light',
+		// }),
 	],
 };
 
